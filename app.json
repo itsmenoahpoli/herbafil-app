@@ -1,0 +1,39 @@
+{
+  "expo": {
+    "name": "HERBAFIL",
+    "slug": "herbafil",
+    "version": "1.0.0",
+    "orientation": "portrait",
+    "icon": "./assets/images/icon.png",
+    "userInterfaceStyle": "dark",
+    "assetBundlePatterns": ["**/*"],
+    "ios": {
+      "supportsTablet": true
+    },
+    "android": {
+      "adaptiveIcon": {
+        "foregroundImage": "./assets/images/adaptive-icon.png",
+        "backgroundColor": "#ffffff"
+      },
+      "package": "com.itsmenoahpoli.culbustransport"
+    },
+    "web": {
+      "favicon": "./assets/images/favicon.png"
+    },
+    "extra": {
+      "eas": {
+        "projectId": "83a16f23-b9c9-497e-9659-67f25ce9dac9"
+      }
+    }
+  },
+  "plugins": [
+    [
+      "expo-camera",
+      {
+        "cameraPermission": "Allow HERBAFIL to access your camera",
+        "microphonePermission": "Allow HERBAFIL to access your microphone",
+        "recordAudioAndroid": true
+      }
+    ]
+  ]
+}
