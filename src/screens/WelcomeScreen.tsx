@@ -13,7 +13,7 @@ type TScreenProps = {
 export const WelcomeScreen: React.FC<TScreenProps> = (props) => {
   return (
     <BaseLayout>
-      <View className="flex-1 justify-center items-center">
+      <View className="flex-1 items-center pt-[5%]">
         <BrandLogo />
         <SigninForm />
       </View>
