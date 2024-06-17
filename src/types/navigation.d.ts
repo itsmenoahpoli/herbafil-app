@@ -4,4 +4,5 @@ export type TStackParamsList = {
   HOME_SCREEN: undefined;
   PLANT_INFORMATION_SCREEN: undefined;
   PLANT_CAPTURE_SCREEN: undefined;
+  USER_PROFILE_SCREEN: undefined;
 };
