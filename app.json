@@ -19,21 +19,6 @@
     },
     "web": {
       "favicon": "./assets/images/favicon.png"
-    },
-    "extra": {
-      "eas": {
-        "projectId": "83a16f23-b9c9-497e-9659-67f25ce9dac9"
-      }
     }
-  },
-  "plugins": [
-    [
-      "expo-camera",
-      {
-        "cameraPermission": "Allow HERBAFIL to access your camera",
-        "microphonePermission": "Allow HERBAFIL to access your microphone",
-        "recordAudioAndroid": true
-      }
-    ]
-  ]
+  }
 }
