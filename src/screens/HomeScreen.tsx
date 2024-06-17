@@ -1,5 +1,5 @@
 import React from "react";
-import { View, Text } from "react-native";
+import { View, Pressable } from "react-native";
 import { StackNavigationProp } from "@react-navigation/stack";
 import { BrandLogo } from "@/components/shared";
 import { BaseButton } from "@/components/base";
@@ -11,6 +11,10 @@ type TScreenProps = {
 };
 
 export const HomeScreen: React.FC<TScreenProps> = (props) => {
+  const handleRedirectPlantInfoScreen = () => {
+    props.navigation.navigate("PLANT_INFORMATION_SCREEN");
+  };
+
   return (
     <BaseLayout>
       <View className="flex-1 justify-center items-center">
@@ -19,9 +23,9 @@ export const HomeScreen: React.FC<TScreenProps> = (props) => {
           <BaseButton title="Herbal" className="w-[150px]" />
         </View>
         <View className="flex flex-row items-center gap-x-5 mt-[80px] mb-[20px]">
-          <View className="w-[100px] h-[100px] bg-[#DFFCDC]" />
-          <View className="w-[130px] h-[130px] bg-[#DFFCDC]" />
-          <View className="w-[100px] h-[100px] bg-[#DFFCDC]" />
+          <Pressable className="w-[100px] h-[100px] bg-[#DFFCDC]" onPress={handleRedirectPlantInfoScreen} />
+          <Pressable className="w-[130px] h-[130px] bg-[#DFFCDC]" onPress={handleRedirectPlantInfoScreen} />
+          <Pressable className="w-[100px] h-[100px] bg-[#DFFCDC]" onPress={handleRedirectPlantInfoScreen} />
         </View>
         <BrandLogo small />
       </View>
