@@ -8,7 +8,7 @@ SplashScreen.hideAsync();
 
 const App: React.FC = () => {
   return (
-    <BaseLayout>
+    <BaseLayout hideNavBtn>
       <SafeAreaProvider>
         <SafeAreaView className="flex-1">
           <AppNavigation />
