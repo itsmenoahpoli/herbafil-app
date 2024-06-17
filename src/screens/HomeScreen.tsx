@@ -9,11 +9,12 @@ type TScreenProps = {
   navigation: StackNavigationProp<TStackParamsList, "WELCOME_SCREEN">;
 };
 
-export const WelcomeScreen: React.FC<TScreenProps> = (props) => {
+export const HomeScreen: React.FC<TScreenProps> = (props) => {
   return (
     <BaseLayout>
       <View className="flex-1 justify-center items-center">
         <BrandLogo />
+        <Text>Home Screen</Text>
       </View>
     </BaseLayout>
   );
