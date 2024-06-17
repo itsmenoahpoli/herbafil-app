@@ -1,5 +1,5 @@
 import React from "react";
-import { View, Text } from "react-native";
+import { View } from "react-native";
 import { StackNavigationProp } from "@react-navigation/stack";
 import { BrandLogo } from "@/components/shared";
 import { BaseLayout } from "@/layouts";
@@ -9,12 +9,11 @@ type TScreenProps = {
   navigation: StackNavigationProp<TStackParamsList, "HOME_SCREEN">;
 };
 
-export const HomeScreen: React.FC<TScreenProps> = (props) => {
+export const UserProfileScreen: React.FC<TScreenProps> = (props) => {
   return (
     <BaseLayout>
-      <View className="flex-1 justify-center items-center">
+      <View className="flex-1 items-center pt-[5%]">
         <BrandLogo />
-        <Text>Home Screen</Text>
       </View>
     </BaseLayout>
   );
