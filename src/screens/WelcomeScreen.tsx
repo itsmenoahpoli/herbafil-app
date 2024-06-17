@@ -1,7 +1,8 @@
 import React from "react";
-import { View, Text } from "react-native";
+import { View } from "react-native";
 import { StackNavigationProp } from "@react-navigation/stack";
-import { BrandLogo, SigninForm } from "@/components";
+import { BrandLogo } from "@/components/shared";
+import { SigninForm } from "@/components/domains/auth";
 import { BaseLayout } from "@/layouts";
 import type { TStackParamsList } from "@/types/navigation";
 
