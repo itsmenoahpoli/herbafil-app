@@ -1,5 +1,5 @@
 import React from "react";
-import { View, Text, Pressable, Alert } from "react-native";
+import { View, Text, Pressable, StyleSheet } from "react-native";
 import { CameraView, useCameraPermissions } from "expo-camera";
 import { StackNavigationProp } from "@react-navigation/stack";
 import { AntDesign } from "@expo/vector-icons";
@@ -12,7 +12,6 @@ type TScreenProps = {
 };
 
 export const PlantCaptureScreen: React.FC<TScreenProps> = (props) => {
-  const [facing, setFacing] = React.useState<string>("back");
   const [permission, requestPermission]: any = useCameraPermissions();
 
   console.log(permission);
@@ -23,7 +22,16 @@ export const PlantCaptureScreen: React.FC<TScreenProps> = (props) => {
         <Text className="text-xl text-green-900 text-center font-bold">Capture Plant</Text>
 
         <View className="w-full flex-1 mt-10">
-          {!permission || !permission.granted ? <Text className="text-center text-red-700">Camera permission not allowed</Text> : null}
+          {!permission || !permission.granted ? (
+            <View className="flex flex-col gap-y-4">
+              <Text className="text-center text-red-700">Camera permission not allowed</Text>
+              <Pressable className="border rounded-md p-3 mx-auto" onPress={requestPermission}>
+                <Text>GRANT PERMISSION</Text>
+              </Pressable>
+            </View>
+          ) : (
+            <CameraView style={styles.camera} facing="back"></CameraView>
+          )}
         </View>
 
         <Pressable className="bg-purple-700 border border-white rounded-full p-4 mt-10">
@@ -35,3 +43,28 @@ export const PlantCaptureScreen: React.FC<TScreenProps> = (props) => {
     </BaseLayout>
   );
 };
+const styles = StyleSheet.create({
+  container: {
+    flex: 1,
+    justifyContent: "center",
+  },
+  camera: {
+    flex: 1,
+  },
+  buttonContainer: {
+    flex: 1,
+    flexDirection: "row",
+    backgroundColor: "transparent",
+    margin: 64,
+  },
+  button: {
+    flex: 1,
+    alignSelf: "flex-end",
+    alignItems: "center",
+  },
+  text: {
+    fontSize: 24,
+    fontWeight: "bold",
+    color: "white",
+  },
+});
